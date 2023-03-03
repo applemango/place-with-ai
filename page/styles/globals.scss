@@ -1,0 +1,51 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+}
+a::before {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #E91E63;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .4s,-webkit-transform .4s;
+}
+a:hover::before {
+    transform-origin: bottom left;
+    transform: scaleX(1)
+}
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #FFC107;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform .6s,-webkit-transform .6s;
+    z-index: 10;
+}
+a:hover::after {
+    width: 80%;
+    transform-origin: bottom left;
+    transform: scaleX(1)
+}
+
+* {
+    box-sizing: border-box;
+}

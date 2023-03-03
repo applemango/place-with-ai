@@ -1,0 +1,68 @@
+.main {
+    width: fit-content;
+    height: fit-content;
+    > div {
+        position: absolute;
+        bottom: 15px;
+        left: calc(50% - 550px);
+        max-width: 100%;
+        display: flex;
+        border-radius: 0px;
+        border: 8px solid #34495e;
+        background-color: #34495e;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 2px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .main > div {
+        width: 556px;
+        left: calc(50% - 275px);
+    }
+    .main :is(.color:first-child, .color:last-child) {
+        border-radius: 0px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .main > div {
+        flex-wrap: nowrap;
+        width: 90%;
+        left: 5%;
+    }
+    .main .color:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    .main .color:last-child {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+}
+.color {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: scale 0.3s cubic-bezier(1,0,.38,2.1),border-radius .6s;
+}
+.color:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.color:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.color:hover {
+    z-index: 10;
+    scale: 1.1;
+    border-radius: 2px;
+}
+.color:active {
+    scale: 1.2;
+    transition: scale 0.15s cubic-bezier(1,0,.38,2.1),border-radius .6s;
+}
+.active {
+    scale: 1.05;
+    border-radius: 2px;
+}
